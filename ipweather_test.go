@@ -2,8 +2,12 @@ package ipweather
 
 import "testing"
 
-func TestNew(t *testing.T) {
-	if _, err := New("bad ip"); err == nil {
+func TestGetWeather(t *testing.T) {
+	ipw, err := New()
+	if err != nil {
+		t.Fatalf("New() returned an unexpected error: %v", err)
+	}
+	if _, err := ipw.GetWeather("bad ip"); err == nil {
 		t.Errorf("Missing expected error")
 	}
 }
