@@ -17,6 +17,7 @@ type WeatherDetails struct {
 	Country     string
 	Temperature float64
 	Conditions  string
+	Wind        string
 	Humidity    int
 }
 
@@ -30,6 +31,7 @@ func (iw *IPWeather) GetWeather(ip string) (*WeatherDetails, error) {
 		Country:     "Example Country",
 		Temperature: 25.5,
 		Conditions:  "Sunny and mild",
+		Wind:        "Light south west",
 		Humidity:    60,
 	}, nil
 }
